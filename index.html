@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para ti 💐</title>
+  <style>
+    body{
+      margin:0; min-height:100vh; display:grid; place-items:center;
+      font-family: system-ui, Arial; background: linear-gradient(120deg,#ffe6f2,#e6fff7);
+      text-align:center; padding:24px;
+      overflow:hidden;
+    }
+    .card{
+      max-width:520px; background:#fff; border-radius:18px; padding:26px;
+      box-shadow:0 12px 30px rgba(0,0,0,.12);
+      position:relative;
+      z-index:2;
+    }
+    .flowers{ font-size:52px; line-height:1.2; }
+    .msg{ font-size:20px; margin-top:12px; }
+    .from{ opacity:.7; margin-top:16px; font-size:14px; }
+
+    /* "Flores" flotando */
+    .petal{
+      position:absolute; top:-50px;
+      font-size:28px;
+      animation: fall linear infinite;
+      opacity:.85;
+      z-index:1;
+      user-select:none;
+    }
+    @keyframes fall{
+      to{ transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="flowers">🌸💐🌷🌹🌻</div>
+    <div class="msg">Eres una persona increíble. Gracias por estar 💖</div>
+    <div class="from">— De: Tu nombre</div>
+  </div>
+
+  <script>
+    const icons = ["🌸","🌷","🌹","💐","🌻"];
+    for(let i=0;i<20;i++){
+      const s = document.createElement("div");
+      s.className="petal";
+      s.textContent = icons[Math.floor(Math.random()*icons.length)];
+      s.style.left = Math.random()*100 + "vw";
+      s.style.animationDuration = (3 + Math.random()*5) + "s";
+      s.style.animationDelay = (Math.random()*3) + "s";
+      document.body.appendChild(s);
+    }
+  </script>
+
+</body>
+</html>
