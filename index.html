@@ -4,13 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Para ti 🖤</title>
- 
+
   <style>
     :root{
       --bg1:#05060a;
       --bg2:#0b0d18;
       --glow:#1a1f3a;
-      --card: rgba(255,255,255,.06);
       --border: rgba(255,255,255,.10);
       --text:#ececf6;
       --muted:#b7b7d2;
@@ -101,7 +100,7 @@
       box-shadow: 0 14px 34px rgba(0,0,0,.45);
     }
 
-    /* Pétalos/íconos cayendo */
+    /* Iconos cayendo */
     .petal{
       position:absolute;
       top:-70px;
@@ -117,7 +116,6 @@
       to{ transform: translateY(120vh) rotate(360deg); }
     }
 
-    /* Si alguien tiene reducción de movimiento */
     @media (prefers-reduced-motion: reduce){
       .petal{ animation: none; display:none; }
     }
@@ -131,13 +129,14 @@
 
     <!-- CAMBIA TU MENSAJE AQUI -->
     <div class="msg">
-      Y si te vas quiero irme conitgo.<br>
+      Y si te vas quiero irme contigo.<br>
       Y si mueres yo quiero morir contigo.<br>
       Tomarte de la mano y alejarnos caminando.
     </div>
 
     <!-- CAMBIA TU FIRMA AQUI -->
     <div class="from"> TE ADORO MI PRINCESA HERMOSA 𖹭 </div>
+
 
     <div class="controls">
       <button class="btn" id="playYT">▶ Reproducir</button>
@@ -169,14 +168,14 @@
       document.body.appendChild(p);
     }
 
-    // YouTube (tu link)
-    const videoId = "m2ZFZsuIt0s";
+    // YouTube (nuevo enlace)
+    const videoId = "DnGdoEa1tPg";
     const ytBox = document.getElementById("ytBox");
     const ytFrame = document.getElementById("ytFrame");
 
     document.getElementById("playYT").addEventListener("click", () => {
-      // Se coloca el src solo al hacer click (para que el navegador permita sonido)
-      ytFrame.src = `https://www.youtube.com/watch?v=DnGdoEa1tPg&list=RDDnGdoEa1tPg&start_radio=1${videoId}?autoplay=1&rel=0&modestbranding=1`;
+      // Carga el video SOLO al hacer click para que el navegador permita sonido
+      ytFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
       ytBox.style.display = "block";
     });
 
